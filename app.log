@@ -1,0 +1,67 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-492-008
+ERROR:main:JSONDecodeError: Invalid cookie format
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 15:45:35] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 15:45:35] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-492-008
+INFO:werkzeug: * Detected change in '/Users/rauf/PycharmProjects/weather/main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-492-008
+ERROR:main:JSONDecodeError: Invalid cookie format
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:24:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:24:47] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:24] "GET /autocomplete?query=Kj HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:26] "GET /autocomplete?query=Ло HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:27] "GET /autocomplete?query=Лон HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:29] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:29] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:30] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:31] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:25:32] "[35m[1mPOST /weather HTTP/1.1[0m" 500 -
+ERROR:main:JSONDecodeError: Invalid cookie format
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:main:JSONDecodeError: Invalid cookie format
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:22] "GET /autocomplete?query=Ло HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:22] "GET /autocomplete?query=Лон HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:22] "GET /autocomplete?query=Лонд HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:23] "GET /autocomplete?query=Фонд HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:24] "GET /autocomplete?query=Фон HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:25] "GET /autocomplete?query=Фо HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:25] "GET /autocomplete?query=Ло HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:25] "GET /autocomplete?query=Лон HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:27] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:28] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-492-008
+ERROR:main:JSONDecodeError: Invalid cookie format
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:51] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:51] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:55] "GET /autocomplete?query=Ст HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:55] "GET /autocomplete?query=Ста HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:56] "GET /autocomplete?query=Стам HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:58] "GET /autocomplete?query=Стамб HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:58] "GET /autocomplete?query=Стамбу HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:58] "GET /autocomplete?query=Стамбул HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:30:00] "POST /weather HTTP/1.1" 200 -

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Прогноз погоды</h1>
+        <form id="weatherForm">
+            <input type="text" id="city" name="city" placeholder="Введите город" autocomplete="off">
+            <button type="submit">Узнать погоду</button>
+        </form>
+        <div id="weatherResult">
+            {% if last_weather %}
+                <h2>Погода в {{ last_weather.city }}</h2>
+                {% if last_weather.current_weather %}
+                    <p>Температура: {{ last_weather.current_weather.temperature }}°C</p>
+                    <p>Погода: {{ last_weather.description }}</p>
+                {% else %}
+                    <p>Нет данных о текущей погоде.</p>
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <h2>История поиска</h2>
+        <button id="loadHistory">Загрузить историю поиска</button>
+        <div id="searchHistory"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function getCookie(name) {
+                let matches = document.cookie.match(new RegExp(
+                    "(?:^|; )" + name.replace(/([.$?*|{}()[]\/+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+
+            function setWeatherResult(data) {
+                $('#weatherResult').html(`
+                    <h2>Погода в ${data.city}</h2>
+                    <p>Температура: ${data.current_weather.temperature}°C</p>
+                    <p>Погода: ${data.description}</p>
+                `);
+            }
+
+            // Проверяем наличие куки и отображаем данные
+            let lastWeather = getCookie('last_weather');
+            if (lastWeather) {
+                try {
+                    lastWeather = JSON.parse(lastWeather);
+                    setWeatherResult(lastWeather);
+                } catch (e) {
+                    console.error('JSONDecodeError: Invalid cookie format', e);
+                }
+            }
+
+            $('#city').on('input', function() {
+                let query = $(this).val();
+                if (query.length > 1) {
+                    $.ajax({
+                        url: '/autocomplete',
+                        data: { query: query },
+                        success: function(data) {
+                            let suggestions = data.map(city => `<div class="autocomplete-suggestion">${city}</div>`).join('');
+                            $('.autocomplete-suggestions').remove();
+                            $('#city').after(`<div class="autocomplete-suggestions">${suggestions}</div>`);
+                        }
+                    });
+                } else {
+                    $('.autocomplete-suggestions').remove();
+                }
+            });
+
+            $(document).on('click', '.autocomplete-suggestion', function() {
+                $('#city').val($(this).text());
+                $('.autocomplete-suggestions').remove();
+            });
+
+            $('#weatherForm').on('submit', function(e) {
+                e.preventDefault();
+                let city = $('#city').val();
+                $.ajax({
+                    url: '/weather',
+                    method: 'POST',
+                    contentType: 'application/x-www-form-urlencoded',
+                    data: { city: city },
+                    success: function(data) {
+                        if (data.error) {
+                            $('#weatherResult').html(`<p>${data.error}</p>`);
+                        } else {
+                            setWeatherResult(data);
+                            document.cookie = `last_weather=${encodeURIComponent(JSON.stringify(data))};path=/;max-age=${30*24*60*60}`;
+                        }
+                    }
+                });
+            });
+
+            $('#loadHistory').on('click', function() {
+                $.ajax({
+                    url: '/search_history',
+                    method: 'GET',
+                    success: function(data) {
+                        let history = '<ul>';
+                        for (const city in data) {
+                            history += `<li>${city}: ${data[city]} поисков</li>`;
+                        }
+                        history += '</ul>';
+                        $('#searchHistory').html(history);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
