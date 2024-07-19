@@ -65,3 +65,7 @@ INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:58] "GET /autocomplete?query=Ст
 INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:58] "GET /autocomplete?query=Стамбу HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:29:58] "GET /autocomplete?query=Стамбул HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [19/Jul/2024 16:30:00] "POST /weather HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/rauf/PycharmProjects/weather/main.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 145-492-008
